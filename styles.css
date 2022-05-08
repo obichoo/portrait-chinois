@@ -1,0 +1,713 @@
+@font-face {
+    font-family: 'gameboy';
+    src: url('fonts/coders-crux/textes-gameboy.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'start-select';
+    src: url('fonts/arial-rounded/ARLRDBD.TTF') format('truetype');
+}
+
+@keyframes degrade {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes ecran-daccueil {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cartes {
+    0% {
+        transform: scale(0.9);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes transition-ecran {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -150vh) scale(5);
+    }
+}
+
+.lock {
+    position: absolute;
+    z-index: 100;
+    visibility: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    user-select: none;
+    margin: 0;
+    width: 1024px;
+    overflow: hidden;
+    background-image: url('img/gameboy/bureau.jpg');
+    background-size: 105vw 105vh;
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+    width: 0.15vw;
+    background: white;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+.aubin,
+.olivrie {
+    position: absolute;
+    font-family: 'start-select';
+    color: #453f54;
+    left: 13.5vw;
+    top: 55vh;
+    z-index: 1;
+    transform: rotate(10deg);
+}
+
+.olivrie {
+    top: 64.25vh;
+    left: 11vw;
+    transform: rotate(12deg);
+}
+
+.gameboy {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    height: 46vw;
+    z-index: -1;
+}
+
+.fond-gameboy {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 54vw;
+    z-index: -5;
+}
+
+.cartes-ecrantitre {
+    position: absolute;
+    left: 8vw;
+    width: 100vw;
+    height: 54vw;
+    max-height: 100vh;
+    max-width: 180vh;
+    z-index: -2;
+    animation: cartes ease-out 8s infinite;
+}
+
+.commencer {
+    font-family: gameboy;
+    color: black;
+    font-size: 3vw;
+    position: absolute;
+    top: 50vh;
+    left: 49vw;
+    transform: translate(-50%, -50%);
+    text-indent: 1.5vw;
+    animation: ecran-daccueil 4s infinite;
+}
+
+.rect1,
+.rect2 {
+    height: 3.7vw;
+    width: 10.3vw;
+    position: absolute;
+    top: 35vh;
+    left: 14.4vw;
+}
+
+.rect2 {
+    transform: rotate(90deg);
+}
+
+.select,
+.start {
+    position: absolute;
+    left: 22.5vw;
+    top: 61vh;
+    width: 32px;
+    height: 32px;
+    border-radius: 17.5px;
+}
+
+.select {
+    top: 71vh;
+    left: 22.2vw;
+}
+
+.bouton_a,
+.bouton_b {
+    position: absolute;
+    left: 80vw;
+    top: 30vh;
+    width: 72px;
+    height: 72px;
+    border-radius: 60px;
+}
+
+.bouton_b {
+    left: 72.3vw;
+    top: 36.3vh;
+}
+
+.menu-gameboy {
+    font-family: gameboy;
+    font-size: 2.1vw;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    width: 37vw;
+    height: 49vh;
+    top: 19vh;
+    left: 30vw;
+    padding: 2px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-gameboy>* {
+    text-align: center;
+    padding: 2px;
+}
+
+.menu-gameboy *:hover,
+.retour-info:hover {
+    border: black 2px solid;
+}
+
+.informations {
+    top: 55vh;
+    left: 34vw;
+}
+
+.infos,
+.retour-info,.regles,.echap {
+    font-family: gameboy;
+    display: none;
+    width: 33vw;
+    height: 40vh;
+    font-size: 2.25vw;
+    position: absolute;
+    left: 32vw;
+    top: 23vh;
+    text-align: center;
+}
+
+.infos{
+    top: 17vh;
+}
+
+.regles {
+    display: flex;
+    opacity: 0;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 2vw;
+    z-index: -2;
+}
+
+a[href*=aolivrie] {
+    user-select: unset;
+}
+
+.echap {
+    position: absolute;
+    z-index: 150;
+    display: none;
+    top: 33vh;
+    left: 33vw;
+    width: 33vw;
+    height: 33vh;
+    border: 1vw black solid;
+    background-color: #f9fcdd;
+}
+
+.echap h1{
+    padding-top: 3vh;
+    margin: 0;
+}
+
+.echap span{
+    position: relative;
+    text-align: center;
+    top: 2vh;
+    font-size: 3vw;
+}
+
+.echap span:nth-of-type(2){
+    top: 8vh;
+}
+
+.echap span:hover{
+    border: black solid 2px;
+    padding: 2px;
+}
+
+.retour-info {
+    position: absolute;
+    top: 63vh;
+    left: 32vw;
+    font-size: 2vw;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px;
+}
+
+#etape2 {
+    display: none;
+    position: absolute;
+    z-index: 25;
+}
+
+.monde {
+    font-family: gameboy;
+    height: 100%;
+    width: 100%;
+}
+
+.monde * {
+    background-color: #f9fcdc;
+    position: absolute;
+    font-size: 25vw;
+}
+
+.vue {
+    background-color: #70b050;
+    display: none;
+}
+
+.cinema {
+    position: absolute;
+    background-color: #371d0f;
+    display: none;
+}
+
+.tommy {
+    position: absolute;
+    background-color: #021223;
+    display: none;
+}
+
+.gourmandise {
+    position: absolute;
+    background-image: linear-gradient(to top right, #f4b8f0 50%, #68d8f3 50%);
+    display: none;
+}
+
+.fruit {
+    position: absolute;
+    background-color: #e9a701;
+    display: none;
+}
+
+.batterie {
+    position: absolute;
+    background-color: #2173a1;
+    display: none;
+}
+
+.top {
+    position: absolute;
+    background-color: #df171d;
+    display: none;
+}
+
+div[class="out-partie-vue"]:hover * {
+    background-color: #70b050;
+}
+
+div[class="out-partie-cinema"]:hover * {
+    background-color: #371d0f;
+}
+
+div[class="out-partie-tommy"]:hover * {
+    background-color: #021223;
+}
+
+div[class="out-partie-gourmandise"]:hover .partie-gourmandise {
+    background-image: linear-gradient(to top right, #f4b8f0 50%, #68d8f3 50%);
+}
+
+div[class="out-partie-gourmandise"]:hover * {
+    background-color: transparent;
+}
+
+div[class="out-partie-fruit"]:hover * {
+    background-color: #e9a701;
+}
+
+div[class="out-partie-batterie"]:hover * {
+    background-color: #2173a1;
+}
+
+div[class="out-partie-top"]:hover * {
+    background-color: #df171d;
+}
+
+
+div[class^="out"] {
+    background-color: black;
+}
+
+.out-partie-vue {
+    clip-path: polygon(90% 19%, 80% 65%, 75% 71%, 69% 100%, 20% 100%, 0 0);
+    height: 75vh;
+    width: 45vw;
+    top: 30vh;
+    left: 29vw;
+}
+
+.partie-vue {
+    clip-path: polygon(90% 21%, 80% 65%, 75% 68%, 69% 100%, 20% 100%, 0 0);
+    height: 88%;
+    width: 94%;
+    top: 6%;
+}
+
+.interrogation-vue {
+    top: 35%;
+    left: 35%;
+}
+
+.out-partie-cinema {
+    clip-path: polygon(0% 0, 0 0, 0% 100%, 49% 32%);
+    height: 105vh;
+    width: 63vw;
+    top: -3vh;
+    left: -1vw;
+}
+
+.partie-cinema {
+    clip-path: polygon(0% 5%, 0% 100%, 48% 35%);
+    height: 95%;
+    width: 90%;
+    top: 0%;
+}
+
+.interrogation-cinema {
+    top: 35vh;
+    left: 5vw;
+}
+
+.out-partie-tommy {
+    clip-path: polygon(0 100%, 80% 100%, 59.5% 0);
+    height: 70vh;
+    width: 50vw;
+    top: 30vh;
+    left: -0.5vw;
+}
+
+.partie-tommy {
+    clip-path: polygon(0 100%, 80% 100%, 58.5% 0);
+    height: 65vh;
+    width: 90%;
+    bottom: 0%;
+    left: 4%;
+}
+
+.interrogation-tommy {
+    left: 18vw;
+    top: 30vh;
+}
+
+.out-partie-gourmandise {
+    clip-path: polygon(22% 14%, 38% 5%, 90% 17%, 100% 100%, 0 100%, 5% 65%, 8% 60%);
+    height: 70.5vh;
+    width: 46vw;
+    top: 34.5vh;
+    left: 59vw;
+}
+
+.partie-gourmandise {
+    clip-path: polygon(18% 8%, 41% 0, 100% 17%, 100% 100%, 0 100%, 5% 65%, 8% 60%);
+    height: 85%;
+    width: 95%;
+    bottom: 0vh;
+    right: 0%;
+}
+
+.interrogation-gourmandise {
+    top: 40%;
+    left: 40%;
+}
+
+.out-partie-fruit {
+    clip-path: polygon(100% 0, 100% 100%, 4% 80%, 0 0);
+    height: 60vh;
+    width: 30vw;
+    top: 0vh;
+    left: 70vw;
+}
+
+.partie-fruit {
+    clip-path: polygon(100% 0, 100% 100%, 4% 80%, 0 0);
+    height: 90%;
+    width: 90%;
+    right: 0%;
+}
+
+.interrogation-fruit {
+    top: 20%;
+    left: 30%;
+}
+
+.out-partie-batterie {
+    clip-path: polygon(0% 0, 97% 0, 100% 96%, 95% 100%, 15% 69%, 25% 25%, 15% 20%);
+    height: 50vh;
+    width: 45vw;
+    top: 0vh;
+    left: 26.5vw;
+}
+
+.partie-batterie {
+    clip-path: polygon(28% 0, 97% 0, 99% 94%, 93% 98%, 25% 75%, 24% 32%, 24% 11%);
+    height: 90%;
+    width: 90%;
+    top: 0vh;
+    right: 0%;
+}
+
+.interrogation-batterie {
+    top: 15%;
+    left: 50%;
+}
+
+.out-partie-top {
+    clip-path: polygon(100% 0, 94% 10%, 94% 59.25%, 65% 50%, 0 0);
+    height: 65vh;
+    width: 45vw;
+    top: 0vh;
+    left: 0vw;
+}
+
+.partie-top {
+    clip-path: polygon(100% 0, 94% 11%, 94% 54%, 70% 47%, 10% 0);
+    height: 91%;
+    width: 93%;
+    top: 0%;
+}
+
+.interrogation-top {
+    top: 5%;
+    left: 65%;
+}
+
+.themes>* {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+.avancee {
+    display: none;
+}
+
+.dessin {
+    position: absolute;
+    width: 25vw;
+    left: 15vw;
+    top: 2vh;
+}
+
+.map {
+    position: absolute;
+    height: 26vh;
+    left: 5vw;
+    top: 60vh;
+}
+
+.revenir {
+    position: absolute;
+    font-family: 'gameboy';
+    font-size: 4vw;
+    width: 11vw;
+    left: 10vw;
+    top: 90vh;
+    cursor: pointer;
+}
+
+.carte {
+    position: absolute;
+    z-index: 1;
+    border: 1vw solid black;
+    width: 26vw;
+    height: 37vw;
+    top: 5vh;
+    left: 45vw;
+    background-color: white;
+    transition: ease 0.5s;
+    transform-style: preserve-3d;
+}
+
+.image-carte {
+    border-bottom: 2vh solid black;
+    max-width: 100%;
+}
+
+.texte {
+    padding: 0.4vw;
+    font-family: gameboy;
+    font-size: 2.6vw;
+    overflow: auto;
+    width: 25vw;
+    height: 45vh;
+    color: #70b050;
+}
+
+div[class=cinema] .texte {
+    height: 33vh;
+    color: #371d0f;
+}
+
+div[class=tommy] .texte {
+    height: 47vh;
+    color: #011627;
+}
+
+div[class=gourmandise] .texte {
+    height: 34vh;
+    color: #68d8f3;
+}
+
+div[class=fruit] .texte {
+    height: 20vh;
+    color: #e9a701;
+}
+
+div[class=batterie] .texte {
+    height: 23.5vh;
+    color: #2173a1;
+}
+
+div[class=top] .texte {
+    height: 38.5vh;
+    color: #df171d;
+}
+
+.avancee {
+    z-index: 20;
+    position: absolute;
+    background-color: white;
+    border-left: black solid 1vw;
+    width: 15vw;
+    top: 0vh;
+    height: 100vh;
+    right: 0%;
+    opacity: 1;
+}
+
+.nombre,
+.limite {
+    font-family: gameboy;
+    display: flex;
+    position: absolute;
+    font-size: 6vw;
+    top: 3%;
+    left: 15%;
+    width: 100%;
+    z-index: 15;
+}
+
+.limite {
+    left: 40%;
+}
+
+div[class^=boule] *,
+div[class^=boule] {
+    position: absolute;
+    width: 6vw;
+}
+
+#vue,
+#cinema,
+#tommy,
+#gourmandise,
+#fruit,
+#batterie,
+#top,
+div[class^=partie],
+#boutons,
+.menu-gameboy *,
+.retour-info, .echap span {
+    cursor: pointer;
+}
+
+.boule-vue,
+.gauche {
+    top: 15vh;
+    left: 1vw;
+}
+
+.boule-cinema,
+.droite {
+    top: 26vh;
+    right: 1vw;
+}
+
+.boule-tommy {
+    top: 37vh;
+}
+
+.boule-gourmandise {
+    top: 48vh;
+}
+
+.boule-fruit {
+    top: 59vh;
+}
+
+.boule-batterie {
+    top: 70vh;
+}
+
+.boule-top {
+    top: 81vh;
+}

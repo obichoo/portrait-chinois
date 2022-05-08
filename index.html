@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait Chinois - AO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon/favicon.png">
+</head>
+
+<body>
+    <div id="lock">
+        <img src="img/gameboy/ecran-redimensionner-fond.jpg" alt="Alerte de redimensionnement d'écran" class="lock">
+    </div>
+    <div id="etape1">
+        <div id="gameboy">
+            <img src='img/gameboy/gameboy.png' alt="Gameboy" class="gameboy">
+            <img src='img/gameboy/fond-gameboy.png' alt="Fond d'écran de la gameboy" class="fond-gameboy">
+            <h1 class="aubin">AUBIN</h1>
+            <h1 class="olivrie">OLIVRIE</h1>
+        </div>
+        <div id="boutons">
+            <div id="fleches">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+            </div>
+            <div id="sl-st">
+                <div class="select"></div>
+                <div class="start"></div>
+            </div>
+            <div id="a-b">
+                <div class="bouton_a"></div>
+                <div class="bouton_b"></div>
+            </div>
+        </div>
+        <div id="ecrantitre">
+            <img src='img/gameboy/cartes-ecrantitre.png' alt="Animations de cartes dans l'écran de la gameboy"
+                class="cartes-ecrantitre">
+            <div class="commencer">
+                CLIQUEZ SUR UN BOUTON <br>
+                POUR COMMENCER LA PARTIE
+            </div>
+        </div>
+        <div class="menu-gameboy">
+            <div class="informations">Qu'est ce qu'un portrait chinois ?</div>
+            <div class="how">Comment jouer ?</div>
+            <div class="nouvelle-partie">Démarrer une nouvelle partie</div>
+        </div>
+        <div class="regles"><span>- Explorez la carte</span><br><span>- Vous pouvez voyager entre les thèmes en cliquant
+                sur les boules</span><br><span>- Après avoir terminé d'explorer la carte, vous ne gagnez absolument
+                rien</span><br><span>- Si besoin, revenez au menu principal à l'aide de la touche
+                "échap" (vous perdrez toute votre progression)</span><br><span>- Portrait chinois réalisé par <br><a target="_blank"
+                    href="https://etudiant.u-pem.fr/~aolivrie/"> Aubin OLIVRIE, étudiant en DUT MMI</a></span></div>
+        <div class="infos">
+            <h2>Qu'est ce qu'un portrait chinois ?</h2>
+            Un portrait chinois consiste à
+            décrire le caractère et les goûts
+            d’une personne au travers d’analogies
+            qu’il justifie par le biais d’un
+            « parce que ». Le site du portrait
+            chinois peut être considéré comme un
+            CV interactif « poétique » qui permet
+            aux visiteurs de découvrir l’individu
+            d'une façon originale et visuelle.
+        </div>
+        <a class="retour-info">Retour</a>
+    </div>
+    <div>
+        <div id="etape2">
+            <div class="monde bas">
+                <div class="out-partie-vue">
+                    <div class="partie-vue"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-vue"></div>
+                </div>
+                <div class="out-partie-cinema">
+                    <div class="partie-cinema"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-cinema"></div>
+                </div>
+                <div class="out-partie-tommy">
+                    <div class="partie-tommy"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-tommy"></div>
+                </div>
+                <div class="out-partie-gourmandise">
+                    <div class="partie-gourmandise"><img src="img/themes/dessins/interrogation.png"
+                            alt="Thème à explorer" class="interrogation-gourmandise"></div>
+                </div>
+            </div>
+            <div class="monde haut">
+                <div class="out-partie-fruit">
+                    <div class="partie-fruit"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-fruit"></div>
+                </div>
+                <div class="out-partie-batterie">
+                    <div class="partie-batterie"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-batterie"></div>
+                </div>
+                <div class="out-partie-top">
+                    <div class="partie-top"><img src="img/themes/dessins/interrogation.png" alt="Thème à explorer"
+                            class="interrogation-top"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="themes">
+            <div class="avancee">
+                <div class="nombre">1</div>
+                <div class="limite"> / 7</div>
+                <div>
+                    <div class="boule-vue gauche">
+                        <img id="vue" src="img/themes/boules/vue-boule.png" alt="Avancée : Thème vue exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-cinema droite">
+                        <img id="cinema" src="img/themes/boules/cinema-boule.png" alt="Avancée : Thème cinéma exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-tommy gauche">
+                        <img id="tommy" src="img/themes/boules/tommy-boule.png" alt="Avancée : Thème Tommy exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-gourmandise droite">
+                        <img id="gourmandise" src="img/themes/boules/gourmandise-boule.png"
+                            alt="Avancée : Thème gourmandise exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-fruit gauche">
+                        <img id="fruit" src="img/themes/boules/fruit-boule.png" alt="Avancée : Thème fruit exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-batterie droite">
+                        <img id="batterie" src="img/themes/boules/batterie-boule.png"
+                            alt="Avancée : Thème batterie exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                    <div class="boule-top gauche">
+                        <img id="top" src="img/themes/boules/top-boule.png"
+                            alt="Avancée : Thème Twenty One Pilots exploré">
+                        <img src="img/themes/boules/mystere-boule.png" alt="Avancée : Thème pas encore exploré">
+                    </div>
+                </div>
+            </div>
+            <div class="vue">
+                <img src="img/themes/dessins/vue-dessin.png" alt="Dessin du thème Vue" class="dessin">
+                <img src="img/themes/cartes/vue-carte.png" alt="Carte du thème Vue" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/vue-image.jpg" alt="Image de la carte du thème Vue" class="image-carte">
+                    <div class="texte">
+                        Si j'étais un des cinq sens, je serais... <br> La vue, parce que c’est le plus important, celui
+                        qu’on entretient le plus, celui qui nous rend le plus lucide possible. De plus, dans le milieu
+                        de
+                        l’audiovisuel, donc celui dont je suis passionné, il est impossible de travailler sans yeux,
+                        c’est
+                        pour cela que j’y tiens tant.
+                    </div>
+                </div>
+            </div>
+            <div class="cinema">
+                <img src="img/themes/dessins/cinema-dessin.png" alt="Dessin du thème Cinéma" class="dessin">
+                <img src="img/themes/cartes/cinema-carte.png" alt="Carte du thème Cinéma" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/cinema-image.jpg" alt="Image de la carte du thème Cinéma"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais un art, je serais... <br>
+                        Le cinéma car il est en constante évolution et c’est l’art reconnu le plus présent dans notre
+                        génération. Le septième art est celui qui m’attire le plus, et probablement le seul qui me
+                        fascine.
+                        J’admets que ma culture cinématographique est plus proche de médiocre que de parfaite, mais je
+                        suis
+                        parfois plus intéressé par les techniques utilisées pour filmer que par le film en lui-même,
+                        même si
+                        cela ne justifie pas le fait que je n’ai toujours pas regardé un seul Star Wars en entier.
+
+                    </div>
+                </div>
+            </div>
+            <div class="tommy">
+                <img src="img/themes/dessins/tommy-dessin.png" alt="Dessin du thème Tommy" class="dessin">
+                <img src="img/themes/cartes/tommy-carte.png" alt="Carte du thème Tommy" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/tommy-image.jpg" alt="Image de la carte du thème Tommy"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais un personnage fictif, je serais... <br>
+                        Thomas Shelby de la série "Peaky Blinders" pour la simple et bonne raison que c’est un
+                        protagoniste
+                        dont le charisme n’a d’égal que son ambition. Tommy, appelé ainsi par ses proches, est mon choix
+                        sans hésiter car, bien que je ne pense pas posséder les mêmes qualités, s’il n’était pas fictif
+                        il
+                        serait sans doute mon idole. Un homme prêt à tout pour sa famille et pour l’avenir de celle-ci,
+                        et
+                        qui le démontre bien.
+
+                    </div>
+                </div>
+            </div>
+            <div class="gourmandise">
+                <img src="img/themes/dessins/gourmandise-dessin.png" alt="Dessin du thème Gourmandise" class="dessin">
+                <img src="img/themes/cartes/gourmandise-carte.png" alt="Carte du thème Gourmandise" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/gourmandise-image.jpg" alt="Image de la carte du thème Gourmandise"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais un péché, je serais... <br>
+                        La gourmandise, si je ne l’incarne pas déjà, puisqu’il est le péché capital que je redoute le
+                        plus,
+                        mais je ne pourrais pas me passer de lui. Il est un bien pour un mal, comme tous les péchés,
+                        mais la
+                        gourmandise peut vous accompagner dans tous les moments, dans tous les états d’esprit et dans
+                        toutes
+                        les circonstances…
+                    </div>
+                </div>
+            </div>
+            <div class="fruit">
+                <img src="img/themes/dessins/fruit-dessin.png" alt="Dessin du thème Fruit" class="dessin">
+                <img src="img/themes/cartes/fruit-carte.png" alt="Carte du thème Fruit" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/fruit-image.jpg" alt="Image de la carte du thème Fruit"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais un aliment, je serais... <br>
+                        Le fruit de la passion car je trouve que son goût aussi acidulé que sucré est très original, et
+                        c’est très probablement pour sa saveur que c’est mon fruit préféré, et selon moi, son aspect
+                        visuel
+                        quand il est ouvert est un peu hypnotisant. De plus, le fait qu’on puisse le manger sans le
+                        croquer
+                        satisfait entièrement ma paresse. Malheureusement il n’est pas très répandu, mais ce n’est pas
+                        pour
+                        autant que je m’empêcherais de le manger à volonté.
+
+                    </div>
+                </div>
+            </div>
+            <div class="batterie">
+                <img src="img/themes/dessins/batterie-dessin.png" alt="Dessin du thème Batterie" class="dessin">
+                <img src="img/themes/cartes/batterie-carte.png" alt="Carte du thème Batterie" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/batterie-image.jpg" alt="Image de la carte du thème Batterie"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais instrument de musique, je serais... <br>
+                        La batterie, puisque bien que je n’en joue pas, c’est sans doute celui que j’aimerais le plus
+                        apprendre à jouer. Souvent quand j’écoute de la musique, je m’amuse à imiter le batteur comme si
+                        je
+                        jouais réellement. C’est l’instrument qui donne le mieux le rythme dans une musique, c’est ça
+                        qui me
+                        séduit le plus je pense.
+
+                    </div>
+                </div>
+            </div>
+            <div class="top">
+                <img src="img/themes/dessins/top-dessin.png" alt="Dessin du thème Twenty One Pilots" class="dessin">
+                <img src="img/themes/cartes/top-carte.png" alt="Carte du thème Twenty One Pilots" class="map">
+                <div class="revenir">
+                    Revenir
+                </div>
+                <div class="carte">
+                    <img src="img/themes/images/top-image.jpg" alt="Image de la carte du thème Twenty One Pilots"
+                        class="image-carte">
+                    <div class="texte">
+                        Si j'étais un groupe de musique, je serais... <br>
+                        Twenty One Pilots, même si c’est un duo, car ils ont très certainement remonté le moral de
+                        milliers
+                        de personnes, voire en ont sauvées, rien qu’avec leur musique. Aussi, ils dégagent des ondes
+                        positives qui donnent espoir et ils montrent en coulisses autant qu’en interview qu’ils sont
+                        comme
+                        tout le monde, c’est ça que j’aime le plus chez eux.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="echap"><h1>PAUSE</h1><br><span id="menu-principal">Revenir au menu principal</span><br><span id="annuler">Retour</span></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
